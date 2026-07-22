@@ -1,0 +1,13 @@
+{
+  "name": "platform-quartz-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "quartz build",
+    "serve": "quartz build --serve"
+  },
+  "dependencies": {
+    "quartz": "github:jackyzha0/quartz#v4"
+  }
+}

@@ -1,0 +1,21 @@
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:16.7.0-ce.0
+    container_name: gitlab
+    hostname: gitlab.local
+    volumes:
+      - ./gitlab.rb:/etc/gitlab/gitlab.rb
+      - gitlab_config:/etc/gitlab
+      - gitlab_logs:/var/log/gitlab
+      - gitlab_data:/var/opt/gitlab
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+      - "2224:22"
+    shm_size: '256m'
+    restart: unless-stopped
+
+volumes:
+  gitlab_config:
+  gitlab_logs:
+  gitlab_data:
